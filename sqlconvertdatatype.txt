@@ -1,0 +1,48 @@
+1.Input:
+select convert(int, 12.34);
+Output:
+12
+
+Description:
+above select statement convert double value into integer.
+
+2.Input:
+select convert(int, 56.98);
+Output:
+56
+
+Description:
+above select statement convert double value into integer.
+
+3.Input:
+select convert(decimal(5,2), 10.0/3.0);
+Output:
+3.33
+
+Description:
+above select statement convert double value into integer.
+
+4.Input:
+select convert(nvarchar,45.67);
+Output:
+45.67
+
+Description:
+Description:
+above select statement convert double value into String.
+
+5.Input:
+select convert(datetime2 ,'2023-05-06 06:08:55 +3:25'):
+Output:
+2023-05-06 06:08:55.0000000
+
+Description:
+above select statement have datetime2 inside of it, it will make given string into date and time, but datetime2 did not accept the GMT(greenwhich mean time).
+
+6.Input:
+select convert(datetimeoffset ,'2023-05-06 06:08:55 +3:25');
+output:
+2023-05-06 06:08:55.0000000 +03:25
+
+Description:
+above select statement have datetime2 inside of it, it will make given string into date and time and datetime2  accept the GMT(greenwhich mean time).

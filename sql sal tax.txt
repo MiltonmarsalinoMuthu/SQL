@@ -1,0 +1,22 @@
+drop table if exists esaltaxtbl;
+
+create table esaltaxtbl
+(
+eid int primary key identity(1001,1) not null,
+ename varchar(15),
+esal numeric(9,2),
+tax10 as convert(numeric(9,2), esal*0.10/100),
+tax20 as convert(numeric(9,2), esal*0.20/100),
+tax30 as convert(numeric(9,2), esal*0.30/100),
+ttax as convert(numeric(9,2), (esal*0.10/100)+(esal*0.20/100)+(esal*0.30/100)),
+npay as convert(numeric(9,2), esal-((esal*0.10/100)+(esal*0.20/100)+(esal*0.30/100)) ),
+)
+go
+
+select *from esaltaxtbl;
+
+insert into esaltaxtbl
+(ename,esal)
+values
+('x1',2000000)
+go

@@ -1,0 +1,35 @@
+get date and time using variable.
+
+declare @dtos datetimeoffset;
+select @dtos;--NULL
+
+select @dtos = sysdatetimeoffset();
+select @dtos;--2023-05-08 17:45:09.5514025 +05:30
+
+select format(@dtos, 'd');--5/8/2023
+select format(@dtos, 'dd');--08
+select format(@dtos, 'ddd');--Mon
+select format(@dtos, 'dddd');--Monday
+
+select format(@dtos, 'MM');--05
+select format(@dtos, 'MMM');--May
+select format(@dtos, 'MMMM');--May
+
+select format(@dtos, 'yy');--23
+select format(@dtos, 'yyyy');--2023
+
+select format(@dtos, 'hh');--05
+select format(@dtos, 'HH');--17
+
+select format(@dtos, 'mm');--45
+select format(@dtos, 'ss');--09
+select format(@dtos, 'fffffff');--5514025
+select format(@dtos, 'tt');--PM
+
+select format(@dtos, 'D');--Monday, May 8, 2023
+
+select format(@dtos, 't');--5:45 PM
+
+select format(@dtos, 'd', 'in');--05/08/2023
+select format(@dtos, 'd', 'ta-in');--08-05-2023
+select format(@dtos, 'd', 'us');--05/08/2023

@@ -1,0 +1,20 @@
+declare @dtos datetimeoffset;
+declare @dt2 datetime2;
+
+select @dtos = datetimeoffsetformparts(2023,05,16,17,59,59,7654321,5,30,7);
+select @dt2 ='2023.05.16 17:59:59.7654321';
+
+select @dtos;
+
+select @dt2;
+--2023-05-16 17:59:59.7654321
+
+select @dtos ='2023.05.16 17:59:59.7654321';
+
+select @dt2 = datetimeoffsetformparts(2023,05,16,17,59,59,7654321,5,30,7);
+
+select @dtos;
+--2023-05-16 17:59:59.7654321 +00:00
+
+select @dt2;
+--2023-05-16 17:59:59.7654321

@@ -1,0 +1,31 @@
+Divide double and integer;
+
+Doble is Doble is an heavy weight variabe it have 8 bytes.
+integer is light weight variabe compare with double it have only 2 bytes.
+
+
+1.Input:
+  select 10/3;
+  output:
+  --3
+ description:
+ (integer/integer)=integer
+2.Input:
+  select 10.0/3;
+description:
+(double/integer)=double
+ output:
+ --3.333333
+
+3.Input:
+  select 10/3.0;
+  outpu8t;
+ -- 3.333333
+description:
+(integer/double)=double
+4.Input:
+  select 10/3.0;
+  outpu8t;
+ -- 3.333333
+description:
+(double/double)=double

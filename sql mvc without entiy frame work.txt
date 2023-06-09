@@ -1,0 +1,122 @@
+drop table if exists tblea
+
+create table tblea
+(
+eid int primary key identity(1001,1)  not null,
+ename varchar(15),
+esal numeric(9,2),
+hra as convert(numeric(9,2), (esal*0.2)),
+da as convert(numeric(9,2), (esal*0.15)),
+pf as convert(numeric(9,2),  (esal*0.35)),
+gpay as convert(numeric(11,2), esal + (esal*0.35)),
+npay as convert(numeric(9,2), esal)
+)
+go 
+
+
+select *from tblea;
+
+insert into tblea
+(ename,esal)
+values
+('x5',100)
+go
+
+drop procedure if exists usum
+go
+
+create procedure usum(@i int,@j int)
+as
+begin
+select @i+@j;
+end
+go
+
+execute dbo.usum 2,7
+go
+
+drop procedure if exists printtblea
+
+create procedure printtblea(@ename varchar(5),@esal numeric(9,2))
+as
+begin
+insert into tblea(ename, esal) values (@ename,@esal);
+end 
+go
+
+execute dbo.printtblea 'x6',200
+go
+
+select *from tblea;
+
+drop procedure if exists prupdtblea
+
+create procedure prupdtblea
+(@eid int, @ename varchar(15), @esal numeric(9,2))
+as
+begin
+update tblea set ename=@ename, esal=@esal
+where eid=@eid;
+end
+go 
+
+exec dbo.prupdtblea 1001, 'x9', 500
+go
+
+
+drop procedure if exists prdeltblea
+
+create procedure prdeltblea
+(@eid int)
+as
+begin
+
+delete from tblea where eid=@eid;
+end
+go 
+
+exec dbo.prupdtblea 1001, 'x9', 500
+go
+
+select *from tblea;
+
+drop procedure if exists prdeltblea
+
+
+create procedure prdeltblea
+(@eid int)
+as
+begin
+
+delete from tblea where eid=@eid;
+end
+go 
+
+exec dbo.prupdtblea 1001, 'x9', 500
+go
+
+
+drop procedure if exists prseltblea
+
+
+create procedure prseltblea
+as
+begin
+select *from tblea;
+end
+go 
+
+exec dbo.prseltblea 
+go
+
+create procedure prWrseltblea
+(@eid int)
+as
+begin
+select *from tblea
+where eid=@eid;
+end
+go 
+
+exec dbo.prWrseltblea 1001
+go

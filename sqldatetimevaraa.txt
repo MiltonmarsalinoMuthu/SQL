@@ -1,0 +1,3 @@
+declare @dtos datetimeoffset = sysdatetimeoffset();
+select @dtos;
+select format(@dtos, 'p');

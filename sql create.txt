@@ -1,0 +1,29 @@
+create table tbler
+(
+rno int primary key identity(1001,1) not null,
+name varchar(15),
+m1 numeric(4,2),
+m2 numeric(4,2),
+total as convert(numeric(5,2), m1+m2),
+average as convert(numeric(5,2), (m1+m2)/2),
+result as iif(m1>34.4 and m2>34.4, 'Pass','Fail')
+);
+
+
+
+insert into tbler
+(name,m1,m2)
+values
+('x1',59.5,45.9),
+('x2',70,59.0),
+('x3',35.8,34.9),
+('x4',90,40.6),
+('x5',59.5,50.8),
+('x6',37.9,50.8);
+
+delete from tbler
+where rno =1007;
+
+select *from tbler
+
+workstation id=sathieshdb.mssql.somee.com;packet size=4096;user id=sathishraina870_SQLLogin_1;pwd=m39j7bysfu;data source=sathieshdb.mssql.somee.com;persist security info=False;initial catalog=sathieshdb

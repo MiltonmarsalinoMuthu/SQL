@@ -1,0 +1,32 @@
+get datatype using variable .
+
+1.Input:
+  select sql_variant_property (1, 'basetype');
+  output:
+  ---int
+Description:
+above input statement get, number 1 datatype int.
+
+
+2.Input:
+  select sql_variant_property (1.0, 'basetype');
+  output:
+  --numeric
+Description:
+above input statement get , 1.0 datatype numeric.
+
+
+3.Input:
+  select sql_variant_property ('xx', 'basetype');
+ output:
+ --varchar
+Description:
+above input statement get , 'xx' datatype varchar.
+
+
+4.Input:
+  select sql_variant_property (getdate(), 'basetype');
+  output:
+  datetime
+Description:
+above input statement getdate() function describe datetime.

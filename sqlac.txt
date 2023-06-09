@@ -1,0 +1,16 @@
+drop table if exists dttbl
+go
+
+create table dttbl
+(
+eid = int identity(10,1),
+doj datetimeoffset
+default sysdatetimeoffset(),
+esal money check (esal >=0)
+)
+go
+insert into dttbl
+(esal)
+values
+(100000)
+go

@@ -1,0 +1,16 @@
+check date and time using isdate() function it will show our input is right or wrong .
+
+hint:
+0 means false.
+1 means true.
+
+
+input:
+select 
+isdate('23-11-2023 23:59:55'),--0
+isdate('06-05-2023 06:08:45'),--1
+isdate('2023-05-06 06:08:45'),--1
+isdate('2023.05.06 06:08:45'),--1
+isdate('2023/05/06 06:08:45')--1
+go
+

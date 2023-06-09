@@ -1,0 +1,18 @@
+input:
+
+select
+getdate(),
+getutcdate(),
+current_timestamp,
+sysdatetime(),
+sysutcdatetime(),
+sysdatetimeoffset();
+
+Output:
+
+2023-05-08 17:36:09.760	
+2023-05-08 12:06:09.760	
+2023-05-08 17:36:09.760	
+2023-05-08 17:36:09.7558149	
+2023-05-08 12:06:09.7558149	
+2023-05-08 17:36:09.7558149 +05:30
